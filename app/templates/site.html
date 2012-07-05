@@ -1,4 +1,4 @@
-{#{% load localeurl_tags %} #}
+{% load localeurl_tags %} 
 {% load i18n %}
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -70,7 +70,7 @@
   {% endblock %}
 <script type="text/javascript">
   Modernizr.load([{
-        load: '{{STATIC_URL}}js/script.js'
+        load: '{{STATIC_URL}}js/script.js?v=0'
 
       /* You can load any kind of stuff here */
 

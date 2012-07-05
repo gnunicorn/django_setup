@@ -17,9 +17,7 @@ def process_template(request):
             'request': request,
             'user': request.user,
             'STATIC_URL': settings.STATIC_URL,
-            # handy when using mothertongue and localurl
-#            'DEFAULT_LANGUAGES': [('en', _('English')), ('de', _('German'))],
-#            'LANGUAGE_CODE': request.LANGUAGE_CODE,
+            'LANGUAGE_CODE': request.LANGUAGE_CODE,
         }
 
 
