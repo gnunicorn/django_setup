@@ -13,6 +13,9 @@ DATABASES['default'].update({
     })
 
 
+# When you work from here, you might want to overwrite external AWS
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+#DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 MEDIA_URL = ''
 MEDIA_ROOT = '../'
