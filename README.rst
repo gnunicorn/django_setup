@@ -17,6 +17,7 @@ This repository relies on a few submodules to include and derive from.
 So don't forget to run:
 
     $ git submodule init
+
     $ git submodule update
 
 
@@ -25,5 +26,9 @@ Setting up
 The setup runs in a virtualenv environment. So you should first run
 
     $ virtualenv .
+
+    $ source bin/activate
+    
+    $ pip -r requirements.txt
 
 
