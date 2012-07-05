@@ -1,0 +1,10 @@
+bin
+build
+include
+lib
+.Python
+*.pyc
+*.swp
+settings_local.py
+sqlite.db
+src
