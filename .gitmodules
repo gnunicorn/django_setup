@@ -1,3 +1,6 @@
 [submodule "lib/twitter-bootstrap"]
 	path = lib/twitter-bootstrap
 	url = git://github.com/twitter/bootstrap.git
+[submodule "lib/html5-boilerplate"]
+	path = lib/html5-boilerplate
+	url = git://github.com/h5bp/html5-boilerplate.git
