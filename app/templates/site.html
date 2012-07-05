@@ -1,0 +1,104 @@
+{#{% load localeurl_tags %} #}
+{% load i18n %}
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>__EXAMPLE__ {%block title %}{% endblock %}</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+	
+	{% if debug %}
+		<link rel="stylesheet/less" href="{{STATIC_URL}}styles.less">
+		<script src="https://raw.github.com/cloudhead/less.js/master/dist/less-1.3.0.min.js"></script>
+	{% else %}
+		<link rel="stylesheet" href="{{STATIC_URL}}styles.css">
+	{% endif %}
+	
+	<script src="{{STATIC_URL}}js/lib/h5bp/modernizr-2.5.3.min.js"></script>
+</head>
+<body {%block body_attrs%}{%endblock%}>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<div id="fb-root"></div>
+
+<header class="container">
+  <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+</header>
+
+
+  <div class="container" role="main">
+    <div id="error_box" class="alert alert-error" style="display:none">
+      <p><strong>Error</strong><p>
+      <p id="error_text"></p>
+    </div>
+			{% block main_content %}
+			{% endblock %}
+    </div> <!-- /container -->
+
+<footer class="container">
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{STAIC_URL}}js/libs/h5bp/jquery-1.7.2.min.js"><\/script>')</script>
+  {% block page_js %}
+  {% endblock %}
+<script type="text/javascript">
+  Modernizr.load([{
+        load: '{{STATIC_URL}}js/script.js'
+
+      /* You can load any kind of stuff here */
+
+      // e.g. some twitter bootstrap files
+      //      }, {
+      //        load: '{{STATIC_URL}}js/lib/twitter/bootstrap-dropdown.js'
+
+      // or facebook
+      // },{
+      //  load: 'http://connect.facebook.net/en_US/all.js',
+      //  complete: function() {
+      //   FB.init({
+      //      appId: '{{settings.FACEBOOK_APP_ID}}',
+      //      status: true,
+      //      cookie: true,
+      //      xfbml: true
+      //      });
+     }]);
+   </script>
+
+<!-- Google Analytics template as well
+<script>
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+-->
+
+</body>
+</html>

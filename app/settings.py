@@ -4,8 +4,7 @@ import os
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
-
-DEBUG = False 
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 INTERNAL_IPS = ('127.0.0.1' ,)
@@ -133,14 +132,13 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'gapbird.base.utils.process_template',
-    'gapbird.cms.context_processors.menu',
+    'base.utils.process_template',
     'django.core.context_processors.csrf',
     'django.contrib.auth.context_processors.auth',
 )
 
 MIDDLEWARE_CLASSES = (
-    'localeurl.middleware.LocaleURLMiddleware', # gotta be *before* CommonMiddleware and there shall not be any builtin LocaleMiddleware
+#    'localeurl.middleware.LocaleURLMiddleware', # gotta be *before* CommonMiddleware and there shall not be any builtin LocaleMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -172,7 +170,7 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "no-reply@example.com"
 
 #userena setup
-AUTH_PROFILE_MODULE = "base.UserProfile"
+AUTH_PROFILE_MODULE = "auth.UserProfile"
 
 LOGIN_REDIRECT_URL = USERENA_SIGNIN_REDIRECT_URL = '/'
 USERENA_ACTIVATION_REQUIRED = True
@@ -226,6 +224,7 @@ INSTALLED_APPS = (
     'userena',
     'south',
     # project
+    'base',
 )
 
 # A sample logging configuration. The only tangible logging
