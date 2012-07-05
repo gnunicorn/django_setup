@@ -8,3 +8,4 @@ lib
 settings_local.py
 sqlite.db
 src
+log/
