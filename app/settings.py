@@ -51,17 +51,17 @@ LANGUAGES = (
 
 # If you want to use localurl
 
-#PREFIX_DEFAULT_LOCALE = True
-#LOCALEURL_USE_ACCEPT_LANGUAGE = True
+PREFIX_DEFAULT_LOCALE = True
+LOCALEURL_USE_ACCEPT_LANGUAGE = True
 
-#LOCALE_INDEPENDENT_PATHS = (
-#    r'^/admin/',
-#    r'^/rosetta/',
-#    r'^/markitup/',
-#)
+LOCALE_INDEPENDENT_PATHS = (
+    r'^/admin/',
+    r'^/rosetta/',
+    r'^/markitup/',
+)
 
 # in cas you feel like making rosetta reload your content
-# ROSETTA_RELOAD = True
+ROSETTA_RELOAD = True
 
 # use the hostname given by nginx
 USE_X_FORWARDED_HOST = True
@@ -138,7 +138,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 MIDDLEWARE_CLASSES = (
-#    'localeurl.middleware.LocaleURLMiddleware', # gotta be *before* CommonMiddleware and there shall not be any builtin LocaleMiddleware
+    'localeurl.middleware.LocaleURLMiddleware', # gotta be *before* CommonMiddleware and there shall not be any builtin LocaleMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -170,7 +170,7 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "no-reply@example.com"
 
 #userena setup
-AUTH_PROFILE_MODULE = "auth.UserProfile"
+AUTH_PROFILE_MODULE = "base.UserProfile"
 
 LOGIN_REDIRECT_URL = USERENA_SIGNIN_REDIRECT_URL = '/'
 USERENA_ACTIVATION_REQUIRED = True
@@ -206,8 +206,8 @@ AWS_STORAGE_BUCKET_NAME = ''
 
 
 INSTALLED_APPS = (
-#    'localeurl', # GOTTA BE FIRST!!!!
-#    'mothertongue',
+    'localeurl', # GOTTA BE FIRST!!!!
+    'mothertongue',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
